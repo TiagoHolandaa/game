@@ -120,16 +120,16 @@ def mover_jogador(carro_jogador):
     movido = False
 
     # Gira o carro para a esquerda ou para a direita
-    if teclas[pygame.K_a]:
+    if teclas[pygame.K_a] or teclas[pygame.K_LEFT]:
         carro_jogador.girar(esquerda=True)
-    if teclas[pygame.K_d]:
+    if teclas[pygame.K_d] or teclas[pygame.K_RIGHT]:
         carro_jogador.girar(direita=True)
     # Acelera o carro
-    if teclas[pygame.K_w]:
+    if teclas[pygame.K_w] or teclas[pygame.K_UP]:
         movido = True
         carro_jogador.mover_frente()
     # Frena o carro
-    if teclas[pygame.K_s]:
+    if teclas[pygame.K_s] or teclas[pygame.K_DOWN]:
         movido = True
         carro_jogador.mover_tras()
     # Reduz a velocidade do carro se ele não estiver sendo movido
